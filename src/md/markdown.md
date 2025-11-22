@@ -103,6 +103,7 @@ console.log('Hello World!');
 이미지를 삽입하려면 !+[링크명]+() 순으로 작성한다. 대괄호 안에는 대체 텍스트, 소관호 안에는 이미지의 URL를 작성한다.
 
 `예시`
+
 ![무한도전 웃긴 이미지](https://i.pinimg.com/736x/b0/b1/a6/b0b1a693d5a136f29f675b08e6ea123b.jpg)
 ![무한도전 웃긴 이미지 2탄](https://i.pinimg.com/736x/43/60/55/43605577efee9a1ef28f80bffbd3f23b.jpg)
 
