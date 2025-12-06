@@ -1,1 +1,118 @@
 /* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+:root {
+  --default-fontsize: 1rem;
+  --default-color: #121212;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-page {
+  font-size: var(--default-fontsize);
+  color: var(--default-color);
+  display: flex;
+  flex-direction: column;
+}
+/* 미디어 쿼리를 이용한 반응형 웹 */
+/* 모바일 퍼스트 스타일링 */
+
+@media (max-width: 767px) {
+  .login-page {
+    width: calc(100% - 40px);
+  }
+}
+@media (min-width: 768px) {
+  .login-page {
+    width: calc(500px - 40px);
+    /* ip보안 온오프 스위치 숨김 기능 추가해야함 */
+  }
+}
+
+.naver-logo {
+  align-self: center;
+  inline-size: 230px;
+  margin-top: 2.5rem;
+}
+
+#user-id,
+#user-pwd {
+  inline-size: 100%;
+  block-size: 43px;
+  box-sizing: border-box;
+  margin-block-start: 0.625rem;
+}
+
+/* 로그인 버튼 */
+button {
+  font-size: var(--default-fontsize);
+  block-size: 45px;
+  inline-size: 100%;
+  color: #fff;
+  background: #03cf5d;
+  border: none;
+  margin-top: 1.25rem;
+  cursor: pointer;
+}
+/* 입력 서식 꾸미기 */
+/* 기본 상태 */
+.id-wrapper .pwd-wrpper {
+  display: flex;
+  flex-flow: nowrap row;
+}
+/* 포커스 상태 */
+input:focus {
+  border-color: #03cf5d;
+  background-color: #e9f0fd;
+  outline: none;
+}
+
+/* 로그인 상태유지 체크박스 */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.625rem;
+}
+.sign-in-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.security-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.security-wrapper a {
+  color: var(--default-color);
+  text-decoration: none;
+}
+
+/* sr-only (스크린 리더 전용) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* 에러 메시지 스타일 */
+
+.error-msg {
+  display: none;
+  color: #ff0000;
+  font-size: 0.75rem;
+  margin-top: 0.3125rem;
+}
+/* 입력했고, 포커스 없고, invalid일 때만 에러 표시 */
+#user-id:not(:placeholder-shown):not(:focus):invalid ~ .error-msg,
+#user-pwd:not(:placeholder-shown):not(:focus):invalid ~ .error-msg {
+  display: block;
+}
