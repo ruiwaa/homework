@@ -4,6 +4,17 @@
   --default-color: #121212;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body > h1 {
+  align-self: start;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -22,12 +33,16 @@ form {
 @media (max-width: 767px) {
   .login-page {
     width: calc(100% - 40px);
+    padding: 1rem;
   }
 }
 @media (min-width: 768px) {
   .login-page {
     width: calc(500px - 40px);
-    /* ip보안 온오프 스위치 숨김 기능 추가해야함 */
+  }
+  .sign-in-checkbox,
+  .security-wrapper {
+    white-space: nowrap;
   }
 }
 
@@ -37,25 +52,14 @@ form {
   margin-block: 2.5rem;
 }
 
-#user-id,
-#user-pwd {
+#user-Id,
+#user-Pwd {
   inline-size: 100%;
   block-size: 43px;
   box-sizing: border-box;
   margin-block-start: 0.625rem;
 }
 
-/* 로그인 버튼 */
-button {
-  font-size: var(--default-fontsize);
-  block-size: 45px;
-  inline-size: 100%;
-  color: #fff;
-  background: #03cf5d;
-  border: none;
-  margin-top: 1.25rem;
-  cursor: pointer;
-}
 /* 입력 서식 꾸미기 */
 /* 기본 상태 */
 .id-wrapper .pwd-wrpper {
@@ -74,12 +78,14 @@ input:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-flow: nowrap;
   width: 100%;
   margin-block-start: 0.625rem;
 }
 .sign-in-checkbox {
   display: flex;
   align-items: center;
+  order: 4;
   gap: 5px;
 }
 .security-wrapper {
@@ -90,9 +96,9 @@ input:focus {
   & a {
     color: var(--default-color);
     text-decoration: none;
-    font-size: var(--default-fontsize)
+    font-size: var(--default-fontsize);
 
-    &:hover {
+    a:hover {
       text-decoration: underline;
     }
   }
@@ -117,8 +123,8 @@ input:focus {
   margin-top: 0.3125rem;
 }
 
-#user-id:not(:focus):not(:placeholder-shown):invalid ~ .error-msg,
-#user-pwd:not(:focus):not(:placeholder-shown):invalid ~ .error-msg {
+#user-Id:not(:focus):not(:placeholder-shown):invalid ~ .error-msg,
+#user-Pwd:not(:focus):not(:placeholder-shown):invalid ~ .error-msg {
   display: block;
 }
 
@@ -174,4 +180,16 @@ input:focus {
 
 .switch-box input:checked + .status-text::after {
   content: 'ON';
+}
+
+/* 로그인 버튼 */
+button {
+  font-size: var(--default-fontsize);
+  block-size: 45px;
+  inline-size: 100%;
+  color: #fff;
+  background: #03cf5d;
+  border: none;
+  margin-top: 1.25rem;
+  cursor: pointer;
 }
