@@ -1,3 +1,175 @@
-@import "./reset.css";
-@import "./theme.css";
-@import "./base.css";
+@import './reset.css';
+@import './theme.css';
+@import './base.css';
+
+:root {
+  /* Color */
+  --white: #f5f5f7;
+  --black: #1d1d1f;
+  --red: #d11719;
+  --gray: #86868b;
+  --blue-100: #2997ff;
+  --blue-200: #0077ed;
+  --blue-300: #0071e3;
+  --blue-400: #006edb;
+
+  /* Box Size */
+  --size: 36.25rem; /* 580px - 카드 높이 고정 값 */
+
+  /* Text Size */
+  --xx-small-text: 0.75rem; /* 12px - Small Screen 버튼(링크) 글자 크기 */
+  --x-small-text: 0.875rem; /* 14px - Large Screen 버튼(링크) 글자 크기 */
+  --small-text: 1.0625rem; /* 17px - 출시일 추후 공개 글자 크기 (공통) */
+  --base-text: 1.1875rem; /* 19px - Small Screen 부제목 글자 크기 */
+  --medium-text: 1.3125rem; /* 21px - Large Screen 부제목 글자 크기 */
+  --large-text: 2rem; /* 32px - Small Screen 제목 글자 크기 */
+  --extra-large-text: 2.5rem; /* 40px - Large Screen 제목 글자 크기 */
+
+  /* Spacing */
+  --x-small-spacing: 0.5rem; /* 8px - 버튼(링크) 상,하단 안쪽 여백, 부제목 하단 여백 */
+  --small-spacing: 0.75rem; /* 12px - 카드 제목, 부제목, 버튼(링크)간 여백(gap), 버튼(링크) 좌,우 안쪽 여백 */
+  --base-spacing: 1rem; /* 16px - 2개의 버튼(링크) 사이 여백 (공통) */
+  --large-spacing: 2.5rem; /* 40px - Small Screen 상단 여백 */
+  --extra-large-spacing: 3.75rem; /* 60px - Large Screen 상단 여백 */
+
+  --line-normal: 1.5; /* 부제목 줄간격 */
+}
+
+body {
+  font-family: var(--base-font-family);
+  line-height: 1.15;
+  margin: 0;
+}
+/* 폰트 크기 및 색깔 지정 */
+.apple-items {
+  box-sizing: border-box;
+  block-size: var(--size);
+  &:nth-child(odd) {
+    color: var(--white);
+  }
+
+  &:nth-child(even) {
+    color: var(--black);
+  }
+
+  h2 {
+    font-size: var(--large-text);
+    @media (width>=1024px) {
+      font-size: var(--extra-large-text);
+    }
+  }
+  p {
+    font-size: var(--base-text);
+
+    @media (width>=1024px) {
+      font-size: var(--medium-text);
+    }
+  }
+  .date {
+    font-size: var(--small-text);
+    color: var(--gray);
+  }
+  a {
+    font-size: var(--xx-small-text);
+    .button {
+      @media (width>=1024px) {
+        font-size: var(--x-small-text);
+      }
+      &.button-fill {
+        background: var(--blue-200);
+        color: var(--white);
+        border: 0;
+        border-radius: 15px;
+        padding-block: var(--x-small-spacing);
+      }
+
+      &.button-outline {
+        border: 1px solid var(--blue-200);
+        color: var(--blue-200);
+        background: transparent;
+        border-radius: 15px;
+        padding-block: var(--x-small-spacing);
+      }
+    }
+  }
+}
+
+/* 각 요소 여백 크기 조정 */
+.apple-items {
+  padding-block-start: var(--large-spacing);
+  @media (width>=1024px) {
+    padding-block-start: var(--extra-large-spacing);
+  }
+  h2 {
+    padding-block-end: var(--small-spacing);
+  }
+  p {
+    line-height: var(--line-normal);
+  }
+
+  .line-2 {
+    margin-bottom: var(--small-spacing);
+  }
+  .date {
+    margin-block: var(--small-spacing);
+  }
+  .button {
+    margin-inline-end: var(--base-spacing);
+  }
+}
+
+/* 배경 이미지 삽입 */
+.list .apple-items {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.n-1 {
+  background-image: url(/src/apple/products/ipad_pro.jpeg);
+  background-position: center;
+  @media (width>=1024px) {
+    background-image: url(/src/apple/products/ipad_pro_2x.jpeg);
+    background-position: center;
+    background-size: cover;
+  }
+}
+.n-2 {
+  background-image: url(/src/apple/products/ipad_air.jpeg);
+
+  @media (width>=1024px) {
+    background-image: url(/src/apple/products/ipad_air_2x.jpeg);
+  }
+}
+.n-3 {
+  background-image: url(/src/apple/products/iphone15_pro.jpeg);
+  @media (width>=1024px) {
+    background-image: url(/src/apple/products/iphone15_pro_wide_2x.jpeg);
+    background-position: center;
+    background-size: cover;
+  }
+}
+.n-4 {
+  background-image: url(/src/apple/products/iphone15.jpeg);
+  @media (width>=1024px) {
+    background-image: url(/src/apple/products/iphone15_2x.jpeg);
+  }
+}
+.n-5 {
+  background-image: url(/src/apple/products/apple_watch.jpeg);
+  @media (width>=1024px) {
+    background-image: url(/src/apple/products/apple_watch_2x.jpeg);
+  }
+}
+.n-6 {
+  background-image: url(/src/apple/products/macbook_air.jpeg);
+  @media (width>=1024px) {
+    background-image: url(/src/apple/products/macbook_air_2x.jpeg);
+  }
+}
+.n-7 {
+  background-image: url(/src/apple/products/airpods_pro.jpeg);
+  @media (width>=1024px) {
+    background-image: url(/src/apple/products/airpods_pro_2x.jpeg);
+  }
+}

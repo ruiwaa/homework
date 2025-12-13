@@ -1,3 +1,18 @@
-@import "./card-component.css";
+@import './card-component.css';
 
 /* 카드 레이아웃 */
+ul {
+  display: grid;
+  text-align: center;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  @media (width>=1024px) {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    .n-1,
+    .n-2,
+    .n-3 {
+      grid-column: span 2;
+    }
+  }
+}
