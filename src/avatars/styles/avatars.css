@@ -1,22 +1,44 @@
 /* 여기에 스타일을 구현해 주세요 */
 .group {
-  width: 320px;
-  margin: 0 auto;
+  --avatar-size: 64px;
+  --state-size: 18px;
+  --disable-color: #dbdbdb;
+  --active-color: #4bfe88;
+  --border-color: #fff;
+
+  width: 596px;
+  height: 395px;
+  padding: 110px 130px;
+  margin: auto;
   overflow: hidden;
-  /* margin:0 화면 가운데 정렬 */
+ 
+  /* margin:auto 화면 가운데 정렬 */
   /* float를 인식하기 위해 overflow를 사용 */
+}
+.avatars-list{
+ box-shadow: 0 0 4px 1px;
+ width: 100%;
+ height: 100%;
+ box-sizing: border-box;
+ padding: 110px 130px;
+ 
+ 
+ 
 }
 .avatarsImageBox {
   float: left;
-  width: 64px;
-  height: 64px;
-  margin: 0;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  margin: 10px;
   position: relative;
   /* float 옆으로 배치 */
   /* 포지션-relative 할 시 포지션-absolute 부분과 함께 붙는다.  */
+
+   &:nth-child(5) {
+      clear: left;
+   }
 }
+
 .image {
   width: 100%;
   height: 100%;
@@ -27,17 +49,27 @@
   bottom: 0;
   right: 0;
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: calc(var(--state-size) / var(--avatar-size) * 100%);
+  aspect-ratio: 1/1;
   border-radius: 50%;
-  border: solid;
-  color: white;
-  font-size: 0;
-  /* 글자를 숨기고 싶을 때! 폰트사이즈 0으로 */
+  border: 2px solid var(--border-color);
 }
 .status-online {
   background-color: #4cfe88;
 }
 .status-offline {
   background-color: #dbdbdb;
+}
+
+/* 접근성 관련 css */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: -1px;
+  clip-path: inset(50%); /* 최신 브라우저를 위한 속성 */
+  padding: 0;
+  border: 0; /* 오타 수정 */
 }
