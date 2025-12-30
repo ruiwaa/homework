@@ -44,6 +44,10 @@ body {
 .apple-items {
   box-sizing: border-box;
   block-size: var(--size);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
   &:nth-child(odd) {
     color: var(--white);
   }
@@ -54,6 +58,7 @@ body {
 
   h2 {
     font-size: var(--large-text);
+
     @media (width>=1024px) {
       font-size: var(--extra-large-text);
     }
@@ -61,7 +66,7 @@ body {
   p {
     font-size: var(--base-text);
 
-    @media (width>=1024px) {
+    @media (width >= 1024px) {
       font-size: var(--medium-text);
     }
   }
@@ -69,12 +74,9 @@ body {
     font-size: var(--small-text);
     color: var(--gray);
   }
-  a {
+  .apple_info {
     font-size: var(--xx-small-text);
-    .button {
-      @media (width>=1024px) {
-        font-size: var(--x-small-text);
-      }
+    padding: var(--x-small-spacing);
       &.button-fill {
         background: var(--blue-200);
         color: var(--white);
@@ -90,13 +92,13 @@ body {
         border-radius: 15px;
         padding-block: var(--x-small-spacing);
       }
-    }
   }
 }
 
 /* 각 요소 여백 크기 조정 */
 .apple-items {
   padding-block-start: var(--large-spacing);
+  
   @media (width>=1024px) {
     padding-block-start: var(--extra-large-spacing);
   }
@@ -113,63 +115,44 @@ body {
   .date {
     margin-block: var(--small-spacing);
   }
-  .button {
+  .apple_info {
     margin-inline-end: var(--base-spacing);
   }
 }
 
 /* 배경 이미지 삽입 */
-.list .apple-items {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
-.n-1 {
-  background-image: url(../products/ipad_pro.jpeg);
-  background-position: center;
-  @media (width>=1024px) {
-    background-image: url(../products/ipad_pro_2x.jpeg);
-    background-position: center;
-    background-size: cover;
-  }
+.ipad-pro{
+    background-image: image-set(url(../products/ipad_pro.jpeg)1x, url(../products/ipad_pro_2x.jpeg) 2x);
+    
+    @media(width >=1024px){
+      background-image: image-set(url(../products/ipad_pro_wide.jpeg) 1x, url(/src/apple/products/ipad_pro_wide_2x.jpeg) 2x);
+    }
 }
-.n-2 {
-  background-image: url(../products/ipad_air.jpeg);
+.ipad-air {
+  background-image: image-set(url(../products/ipad_air.jpeg) 1x, url(../products/ipad_air_2x.jpeg) 2x);
 
-  @media (width>=1024px) {
-    background-image: url(../products/ipad_air_2x.jpeg);
+  @media (width >=1024px) {
+    background-image: image-set(url(../products/ipad_air_wide.jpeg) 1x,url(../products/ipad_air_wide_2x.jpeg) 2x);
   }
 }
-.n-3 {
-  background-image: url(../products/iphone15_pro.jpeg);
-  @media (width>=1024px) {
-    background-image: url(../products/iphone15_pro_wide_2x.jpeg);
-    background-position: center;
-    background-size: cover;
+.ipone-15-pro {
+  background-image: image-set(url(../products/iphone15_pro.jpeg) 1x, url(../products/iphone15_pro_2x.jpeg) 2x);
+
+  @media (width >=1024px) {
+    background-image: image-set(url(../products/iphone15_pro_wide.jpeg)1x, url(../products/iphone15_pro_wide_2x.jpeg) 2x);
   }
 }
-.n-4 {
-  background-image: url(../products/iphone15.jpeg);
-  @media (width>=1024px) {
-    background-image: url(../products/iphone15_2x.jpeg);
-  }
+.ipone-15 {
+  background-image: image-set(url(../products/iphone15.jpeg) 1x, url(../products/iphone15_2x.jpeg) 2x);
+  
 }
-.n-5 {
-  background-image: url(../products/apple_watch.jpeg);
-  @media (width>=1024px) {
-    background-image: url(../products/apple_watch_2x.jpeg);
-  }
+.watch{
+  background-image: image-set(url(../products/apple_watch.jpeg) 1x, url(../products/apple_watch_2x.jpeg) 2x);
 }
-.n-6 {
-  background-image: url(../products/macbook_air.jpeg);
-  @media (width>=1024px) {
-    background-image: url(../products/macbook_air_2x.jpeg);
-  }
+.macbook-air {
+  background-image: image-set(url(../products/macbook_air.jpeg) 1x, url(../products/macbook_air_2x.jpeg) 2x);
 }
-.n-7 {
-  background-image: url(../products/airpods_pro.jpeg);
-  @media (width>=1024px) {
-    background-image: url(../products/airpods_pro_2x.jpeg);
-  }
+.airpods-pro {
+  background-image: image-set(url(../products/airpods_pro.jpeg) 1x, url(../products/airpods_pro_2x.jpeg) 2x);
 }
