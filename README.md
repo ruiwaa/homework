@@ -9,4 +9,5 @@
 - [두 번째 회고](./src/md/retrospect-2nd.md)
 - [세 번째 회고](./src/md/retrospect-3rd.md)
 - [네 번째 회고](./src/md/retrospect-4th.md)
-- [다섯 번째 회고](./src/md/retrospect-5th.md)
+- [다섯째, 여섯번째 회고](./src/md/retrospect-5th,6th.md)
+- [일곱 번째 회고](./src/md/retrospect-7th.md)
